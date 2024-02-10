@@ -20,7 +20,7 @@ import BreakdownChart from "components/BreakdownChart";
 import OverviewChart from "components/OverviewChart";
 import { useGetDashboardQuery } from "state/api";
 import StatBox from "components/StatBox";
-
+import Crispjs from "components/Crisp";
 const Dashboard = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
@@ -58,6 +58,8 @@ const Dashboard = () => {
   ];
 
   return (
+    <>
+    <Crispjs/>
     <Box m="1.5rem 2.5rem">
       <FlexBetween>
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
@@ -202,6 +204,7 @@ const Dashboard = () => {
         </Box>
       </Box>
     </Box>
+    </>
   );
 };
 

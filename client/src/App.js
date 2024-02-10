@@ -21,6 +21,7 @@ import AuthForm from "./pages/Auth/AuthForm";
 
 import { useAuthContext } from "./hooks/useAuthContext";
 import Payment from "components/Payment";
+import Crispjs from "components/Crisp";
 
 
 function App() {
@@ -28,7 +29,9 @@ function App() {
   const mode = useSelector((state) => state.global.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   return (
-    <div className="app">
+    // <div className="app">
+    <>
+      
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
@@ -62,11 +65,14 @@ function App() {
               <Route path="/breakdown" element={<Breakdown />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/performance" element={<Performance />} />
+
             </Route>
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
-    </div>
+      <Crispjs/>
+    {/* </div> */}
+    </>
   );
 }
 
