@@ -20,6 +20,7 @@ import Performance from "scenes/performance";
 import AuthForm from "./pages/Auth/AuthForm";
 
 import { useAuthContext } from "./hooks/useAuthContext";
+import Payment from "components/Payment";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
+          {/* <Route element={<Layout />}> */}
             <Route
               path="/"
               element={
@@ -41,14 +43,15 @@ function App() {
                   <Navigate to="/auth" />
                 )
               }
-            />
+            /> 
             <Route
               path="/auth"
               element={!user ? <AuthForm /> : <Navigate to="/" />}
             />
-            <Route element={<Layout />}>
-              {/* <Route path="/" element={<Navigate to="/dashboard" replace />} /> */}
+               <Route element={<Layout />}>
+               {/* <Route path="/" element={<Navigate to="/dashboard" replace />} />  */}
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/payment" element={<Payment/>}/>
               <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />
               <Route path="/transactions" element={<Transactions />} />

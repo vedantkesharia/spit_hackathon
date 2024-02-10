@@ -21,11 +21,11 @@
   box-sizing: border-box;
 }
 
-html,
+/* html,
 body {
   height: 100vh;
   overflow: hidden;
-}
+} */
 
 .container {
   position: relative;
@@ -246,8 +246,6 @@ body {
   transform: translateX(0);
 }
 
-/* BACKGROUND */
-
 .container::before {
   content: "";
   position: absolute;
@@ -278,7 +276,7 @@ body {
   right: 50%;
 }
 
-/* RESPONSIVE */
+
 
 @media only screen and (max-width: 425px) {
   .container::before,
@@ -292,9 +290,6 @@ body {
     right: 0;
   }
 
-  /* .container.sign-in .col.sign-up {
-        transform: translateY(100%);
-    } */
 
   .container.sign-in .col.sign-in,
   .container.sign-up .col.sign-up {

@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   Box,
   Divider,
@@ -11,6 +13,7 @@ import {
   ListItemText,
   Typography,
   useTheme,
+  Button
 } from "@mui/material";
 import {
   SettingsOutlined,
@@ -28,8 +31,7 @@ import {
   TrendingUpOutlined,
   PieChartOutlined,
 } from "@mui/icons-material";
-import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+
 import FlexBetween from "./FlexBetween";
 import profileImage from "assets/profile.jpeg";
 
@@ -92,6 +94,9 @@ const navItems = [
   },
 ];
 
+
+
+
 const Sidebar = ({
   user,
   drawerWidth,
@@ -108,6 +113,10 @@ const Sidebar = ({
     setActive(pathname.substring(1));
   }, [pathname]);
 
+
+ const paymentfunction = () =>{
+    navigate('/payment')
+ }
   return (
     <Box component="nav">
       {isSidebarOpen && (
@@ -191,9 +200,25 @@ const Sidebar = ({
                 );
               })}
             </List>
+            <List sx={{
+                  // backgroundColor: "transparent",
+                  color: theme.palette.common.white,
+                  borderRadius: "0px",
+                  // padding: "10px 20px",
+                  marginTop: "5px", // Adjust margin top as needed
+                  cursor: "pointer",
+                  textAlign: "center",
+                  color: theme.palette.secondary[200],
+                  // marginLeft: "35%",
+                  "&:hover": {
+                    backgroundColor: theme.palette.primary.main,
+                  },
+                  }}  onClick={paymentfunction} >
+              Pay
+            </List>
           </Box>
 
-          <Box position="absolute" bottom="2rem">
+          {/* <Box position="absolute" bottom="2rem">
             <Divider />
             <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
               <Box
@@ -227,7 +252,7 @@ const Sidebar = ({
                 }}
               />
             </FlexBetween>
-          </Box>
+          </Box> */}
         </Drawer>
       )}
     </Box>
