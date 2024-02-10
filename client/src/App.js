@@ -17,7 +17,13 @@ import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
 
+import AuthForm from "./pages/Auth/AuthForm";
+
+import { useAuthContext } from "./hooks/useAuthContext";
+
+
 function App() {
+    const { user } = useAuthContext();
   const mode = useSelector((state) => state.global.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   return (
@@ -26,8 +32,22 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
+            <Route
+              path="/"
+              element={
+                user ? (
+                  <Navigate to="/dashboard" replace />
+                ) : (
+                  <Navigate to="/auth" />
+                )
+              }
+            />
+            <Route
+              path="/auth"
+              element={!user ? <AuthForm /> : <Navigate to="/" />}
+            />
             <Route element={<Layout />}>
-              <Route path="/" element={<Navigate to="/dashboard" replace />} />
+              {/* <Route path="/" element={<Navigate to="/dashboard" replace />} /> */}
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />

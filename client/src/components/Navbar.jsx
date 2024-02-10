@@ -23,6 +23,7 @@ import {
   MenuItem,
   useTheme,
 } from "@mui/material";
+import Logout from "./Logout"
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch();
@@ -118,7 +119,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               onClose={handleClose}
               anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             >
-              <MenuItem onClick={handleClose}>Log Out</MenuItem>
+              <MenuItem onClick={handleClose}><Logout></Logout></MenuItem>
             </Menu>
           </FlexBetween>
         </FlexBetween>

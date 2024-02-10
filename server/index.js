@@ -37,6 +37,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
+import userRoutes from "./routes/user.js";
+app.use("/api/user", userRoutes);
+
 /* ROUTES */
 app.use("/client", clientRoutes);
 app.use("/general", generalRoutes);
@@ -61,6 +64,5 @@ mongoose
     // Transaction.insertMany(dataTransaction);
     // User.insertMany(dataUser);
   })
-
 
   .catch((error) => console.log(`${error} did not connect`));
