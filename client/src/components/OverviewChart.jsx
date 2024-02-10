@@ -34,6 +34,12 @@ const OverviewChart = ({ data2 }) => {
   return (
     <>
       <Select
+      sx={{
+        padding: '0px',
+        width: '20%',
+        height: '15%',
+        marginBottom: '20px',
+      }}
         value={selectedCommodity}
         onChange={handleCommodityChange}
         displayEmpty
@@ -101,7 +107,7 @@ const OverviewChart = ({ data2 }) => {
             },
           },
         }}
-        margin={{ top: 20, right: 50, bottom: 50, left: 70 }}
+        margin={{ top: 10, right: 50, bottom: 100, left: 70 }}
         xScale={{ type: "linear", min: "auto", max: "auto" }}
         yScale={{ type: "linear", min: "auto", max: "auto", stacked: false, reverse: false }}
         curve="cardinal"

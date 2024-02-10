@@ -51,7 +51,7 @@ const Daily = () => {
     <Box m="1.5rem 2.5rem">
       <Header title="DAILY SALES" subtitle="Chart of daily sales" />
       <Box height="75vh">
-        <Box display="flex" justifyContent="flex-end">
+        <Box color='black' display="flex" justifyContent="flex-end">
           <Box>
             <DatePicker
               selected={startDate}

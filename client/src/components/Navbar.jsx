@@ -70,9 +70,9 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               <LightModeOutlined sx={{ fontSize: "25px" }} />
             )}
           </IconButton>
-          <IconButton>
+          {/* <IconButton>
             <SettingsOutlined sx={{ fontSize: "25px" }} />
-          </IconButton>
+          </IconButton> */}
 
           <FlexBetween>
             <Button
@@ -100,13 +100,13 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                   fontSize="0.85rem"
                   sx={{ color: theme.palette.secondary[100] }}
                 >
-                  {user.name}
+                  Isha Shah
                 </Typography>
                 <Typography
                   fontSize="0.75rem"
                   sx={{ color: theme.palette.secondary[200] }}
                 >
-                  {user.occupation}
+                  Farmer
                 </Typography>
               </Box>
               <ArrowDropDownOutlined

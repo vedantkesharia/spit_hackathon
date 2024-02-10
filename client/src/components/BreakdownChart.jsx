@@ -3,7 +3,7 @@ import { ResponsivePie } from "@nivo/pie";
 import { useTheme, MenuItem, Select } from "@mui/material";
 import { data } from "./monthly2";
 
-const OverviewChart = ({ data2 }) => {
+const BreakdownChart = ({ data2 }) => {
   const theme = useTheme();
   const [selectedYear, setSelectedYear] = useState(2015); // Example: Initial year
 
@@ -33,14 +33,10 @@ const OverviewChart = ({ data2 }) => {
 
     const commodities = [
       "Bajri",
-      "Wheat(Husked)",
-      "Sorgum(Jawar)",
       "Maize",
-      "Gram",
       "Matki",
       "Black Gram",
       "Soybean",
-      "Jaggery",
       "Lemon",
       "Potato",
       "Flower",
@@ -96,7 +92,7 @@ const OverviewChart = ({ data2 }) => {
           data={pieChartData}
           width={350} // Adjust width as needed
           height={400} // Adjust height as needed
-          margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+          margin={{ top: 20, right: 80, bottom: 100, left: 80 }}
           innerRadius={0.5}
           padAngle={0.7}
           cornerRadius={3}
@@ -118,7 +114,7 @@ const OverviewChart = ({ data2 }) => {
   );
 };
 
-export default OverviewChart;
+export default BreakdownChart;
 
 // import React from "react";
 // import { ResponsivePie } from "@nivo/pie";

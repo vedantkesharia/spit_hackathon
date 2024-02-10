@@ -16,12 +16,14 @@ import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
+import Form from "components/Form";
 
 import AuthForm from "./pages/Auth/AuthForm";
 
 import { useAuthContext } from "./hooks/useAuthContext";
 import Payment from "components/Payment";
 import Crispjs from "components/Crisp";
+import FarmerForm from "components/FarmerForm";
 
 
 function App() {
@@ -55,6 +57,7 @@ function App() {
                {/* <Route path="/" element={<Navigate to="/dashboard" replace />} />  */}
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/payment" element={<Payment/>}/>
+              <Route path="/farmerform" element={<FarmerForm/>}/>
               <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />
               <Route path="/transactions" element={<Transactions />} />
@@ -65,6 +68,7 @@ function App() {
               <Route path="/breakdown" element={<Breakdown />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/performance" element={<Performance />} />
+              <Route path="/form" element={<Form />} />
 
             </Route>
           </Routes>
