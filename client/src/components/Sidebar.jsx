@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import pay from "../hooks/usePay"
 import {
   Box,
   Divider,
@@ -41,10 +42,6 @@ const navItems = [
     text: "Dashboard",
     icon: <HomeOutlined />,
   },
-  {
-    text: "Client Facing",
-    icon: null,
-  },
   // {
   //   text: "Products",
   //   icon: <ShoppingCartOutlined />,
@@ -81,18 +78,18 @@ const navItems = [
     text: "Breakdown",
     icon: <PieChartOutlined />,
   },
-  {
-    text: "Management",
-    icon: null,
-  },
+  // {
+  //   text: "Management",
+  //   icon: null,
+  // },
   // {
   //   text: "Admin",
   //   icon: <AdminPanelSettingsOutlined />,
   // },
-  {
-    text: "Performance",
-    icon: <TrendingUpOutlined />,
-  },
+  // {
+  //   text: "Performance",
+  //   icon: <TrendingUpOutlined />,
+  // },
 ];
 
 const Sidebar = ({
@@ -119,7 +116,27 @@ const Sidebar = ({
   const currency = "INR";
   const receiptId = "qwsaq1";
 
+  const localuser = localStorage.getItem("user");
+
+  const parsedUser = JSON.parse(localuser);
+  const email = parsedUser.email;
+  console.log(parsedUser.email);
+
   const paymentHandler = async (e) => {
+    const payresponse = await fetch("http://localhost:4000/pay", {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        cost: amount,
+
+        ///role: role
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+
     const response = await fetch("http://localhost:4000/order", {
       method: "POST",
       body: JSON.stringify({
@@ -211,7 +228,7 @@ const Sidebar = ({
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
                   <Typography variant="h4" fontWeight="bold">
-                    ECOMVISION
+                    KISANSEVA
                   </Typography>
                 </Box>
                 {!isNonMobile && (

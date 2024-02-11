@@ -58,6 +58,7 @@ const AuthForm = () => {
                   placeholder="Username"
                   value={usernameSignUp}
                   onChange={(e) => setUsernameSignUp(e.target.value)}
+                  style={{color:'black'}}
                 />
               </div>
               <div className="input-group">
@@ -67,6 +68,7 @@ const AuthForm = () => {
                   placeholder="Email"
                   value={emailSignUp}
                   onChange={(e) => setEmailSignUp(e.target.value)}
+                  style={{color:'black'}}
                 />
               </div>
               <div className="input-group">
@@ -76,6 +78,7 @@ const AuthForm = () => {
                   placeholder="Password"
                   value={passwordSignUp}
                   onChange={(e) => setPasswordSignUp(e.target.value)}
+                  style={{color:'black'}}
                 />
               </div>
               <div className="input-group">
@@ -116,6 +119,7 @@ const AuthForm = () => {
                   placeholder="Email"
                   value={emailSignIn}
                   onChange={(e) => setEmailSignIn(e.target.value)}
+                  style={{color:'black'}}
                 />
               </div>
               <div className="input-group">
@@ -125,6 +129,7 @@ const AuthForm = () => {
                   placeholder="Password"
                   value={passwordSignIn}
                   onChange={(e) => setPasswordSignIn(e.target.value)}
+                  style={{color:'black'}}
                 />
               </div>
               <button onClick={handleSignin}>Sign in</button>

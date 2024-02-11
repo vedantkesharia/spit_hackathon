@@ -339,7 +339,7 @@ const Dashboard = () => {
       <Crispjs />
       <Box m="1.5rem 2.5rem">
         <FlexBetween>
-          <Header title="DASHBOARD_admin" subtitle="Welcome to your dashboard" />
+          <Header title="Lender Dashboard" subtitle="Welcome to your dashboard" />
          
           <Box>
             <Button
