@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>148007581176-dup54c4j8i8onv99p9j4u8c4agk3e2v7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.148007581176-dup54c4j8i8onv99p9j4u8c4agk3e2v7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCRRrSWSnOey2xpiKyM_8dChosXcqhC9SY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>148007581176</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.coffeeft</string>
+	<key>PROJECT_ID</key>
+	<string>coffeeft-31b1e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>coffeeft-31b1e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:148007581176:ios:152fea2848b55f8094920d</string>
+</dict>
+</plist>
