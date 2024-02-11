@@ -107,6 +107,10 @@ body {
   outline: none;
 }
 
+.black{
+  color: #000000;
+}
+
 .form p {
   margin: 1rem 0;
   font-size: 0.7rem;

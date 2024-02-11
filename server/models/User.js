@@ -31,13 +31,13 @@ const userSchema = new mongoose.Schema(
     role: {
       type: String,
       enum: ["user", "admin", "superadmin"],
-      default: "admin",
+      
     },
   },
   { timestamps: true }
 );
 
-userSchema.statics.signup = async function (email, password, username) {
+userSchema.statics.signup = async function (email, password, username,role) {
   //validation
   if (!email || !password) {
     throw error("All fields must be filled");
@@ -56,7 +56,7 @@ userSchema.statics.signup = async function (email, password, username) {
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
 
-  const user = await this.create({ email, password: hash, username });
+  const user = await this.create({ email, password: hash, username,role });
 
   return user;
 };

@@ -10,6 +10,7 @@ const AuthForm = () => {
   const [usernameSignUp, setUsernameSignUp] = useState();
   const [emailSignUp, setEmailSignUp] = useState();
   const [passwordSignUp, setPasswordSignUp] = useState();
+  const [role, setRole] = useState();
 
   const { signup, error, isLoading } = useSignup();
 
@@ -32,7 +33,7 @@ const AuthForm = () => {
   };
 
   const handleSignup = async (e) => {
-    await signup(emailSignUp, passwordSignUp, usernameSignUp);
+    await signup(emailSignUp, passwordSignUp, usernameSignUp,role);
   };
 
   const handleSignin = async (e) => {
@@ -77,13 +78,23 @@ const AuthForm = () => {
                   onChange={(e) => setPasswordSignUp(e.target.value)}
                 />
               </div>
-              {/* <div className="input-group">
+              <div className="input-group">
                 <i className="bx bxs-lock-alt"></i>
-                <input type="password" placeholder="Confirm password" />
-              </div> */}
+                {/* <input type="password" placeholder="Confirm password" /> */}
+                <select
+                  name="role"
+                  className="black"
+                  id="role"
+                  value={role} // bind the value of the select element to the state variable
+                  onChange={(e) => setRole(e.target.value)} // update the role state when the select value changes
+                >
+                  <option value="user">User</option>
+                  <option value="admin">Lender</option>
+                </select>
+              </div>
               <button onClick={handleSignup}>Sign up</button>
 
-              <p>
+              <p className="black">
                 <span>Already have an account?</span>
                 <b onClick={toggle} className="pointer" disabled={isLoading}>
                   Sign in here
@@ -117,10 +128,10 @@ const AuthForm = () => {
                 />
               </div>
               <button onClick={handleSignin}>Sign in</button>
-              <p>
+              <p className="black">
                 <b>Forgot password?</b>
               </p>
-              <p>
+              <p className="black">
                 <span>Don't have an account?</span>
                 <b onClick={toggle} className="pointer">
                   Sign up here

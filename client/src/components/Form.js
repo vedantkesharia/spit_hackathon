@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './form.css'
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const Form = () => {
@@ -32,8 +33,8 @@ const Form = () => {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className='formDiv'>
+            <form onSubmit={handleSubmit} className='formContainer'>
                 <label>
                     Name:
                     <input
@@ -88,7 +89,9 @@ const Form = () => {
                         onChange={handleChange}
                     />
                 </label>
+                <div className="submitBtn">
                 <button type="submit">Submit</button>
+                </div>
             </form>
 
             {analysisResult && (
