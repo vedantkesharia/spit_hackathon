@@ -1,7 +1,3 @@
-# fullstack-admin
+# Domain Winner - Fintech for SPIT CSI Hackathon 2024
 
-Build a MERN React Admin Dashboard | Redux Toolkit Query, Backend Focus, Deployment, Data Modeling
-
-Video: https://www.youtube.com/watch?v=0cPCMIuDk2I
-
-For all related questions and discussions about this project, check out the discord: https://discord.gg/2FfPeEk2mX
+A website and app for Indian farmers to get loans and for lenders to assess risk of applied loans, view borrower history, approve loans and send money.
