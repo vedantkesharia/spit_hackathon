@@ -1,48 +1,46 @@
-import React, { useState, useEffect } from "react";
 import {
-  LightModeOutlined,
+  ArrowDropDownOutlined,
   DarkModeOutlined,
+  LightModeOutlined,
   Menu as MenuIcon,
   Search,
-  SettingsOutlined,
-  ArrowDropDownOutlined,
 } from "@mui/icons-material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import FlexBetween from "components/FlexBetween";
-import { useDispatch } from "react-redux";
-import { setMode } from "state";
-import profileImage from "assets/profile.jpeg";
 import {
   AppBar,
-  Button,
   Box,
-  Typography,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
   IconButton,
   InputBase,
-  Toolbar,
   Menu,
   MenuItem,
-  useTheme,
-  Snackbar,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
   Slide,
+  Snackbar,
+  Toolbar,
+  Typography,
+  useTheme,
 } from "@mui/material";
+import FlexBetween from "components/FlexBetween";
+import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setMode } from "state";
 import Logout from "./Logout";
 
 // Transition for the custom dialog box
-const Transition = React.forwardRef(function Transition(
-  props,
-  ref
-) {
+const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch();
   const theme = useTheme();
+
+  const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [notificationOpen, setNotificationOpen] = useState(false); // State to manage notifications
@@ -93,6 +91,23 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               <Search />
             </IconButton>
           </FlexBetween>
+          <FlexBetween >
+            <Button
+              sx={{
+                backgroundColor: theme.palette.secondary.light,
+                color: theme.palette.background.alt,
+                fontSize: "14px",
+                fontWeight: "bold",
+                padding: "10px 20px",
+                marginLeft:"10px"
+              }}
+              onClick={() => {
+                navigate("/videocall");
+              }}
+            >
+              Video Call
+            </Button>
+          </FlexBetween>
         </FlexBetween>
 
         {/* RIGHT SIDE */}
@@ -139,12 +154,12 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 >
                   {parsedUser.email}
                 </Typography>
-                {/* <Typography
+                <Typography
                   fontSize="0.75rem"
                   sx={{ color: theme.palette.secondary[200] }}
                 >
-                  Farmer
-                </Typography> */}
+                  {parsedUser.role}
+                </Typography>
               </Box>
               <ArrowDropDownOutlined
                 sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
@@ -195,7 +210,6 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
 };
 
 export default Navbar;
-
 
 // import React, { useState, useEffect } from "react";
 // import {

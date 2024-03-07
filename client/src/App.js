@@ -18,6 +18,7 @@ import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
 import Form from "components/Form";
+import VideoCall from "components/VidoeCall";
 
 import AuthForm from "./pages/Auth/AuthForm";
 
@@ -27,6 +28,7 @@ import Crispjs from "components/Crisp";
 import FarmerForm from "components/FarmerForm";
 import Dashboard from "scenes/dashboard";
 import News from "components/News";
+import RoomPage from "components/RoomPage";
 function App() {
   const { user } = useAuthContext();
   const mode = useSelector((state) => state.global.mode);
@@ -54,6 +56,8 @@ function App() {
               path="/auth"
               element={!user ? <AuthForm /> : <Navigate to="/dashboard" />}
             />
+            <Route path="/videocall" element={<VideoCall />} />
+            <Route path="/room/:roomId" element={<RoomPage />} />
             <Route element={<Layout />}>
               {/* <Route path="/" element={<Navigate to="/dashboard" replace />} />  */}
               <Route path="/dashboard" element={<Dashboard />} />
@@ -85,13 +89,6 @@ function App() {
 
 export default App;
 
-
-
-
-
-
-
-
 // import { CssBaseline, ThemeProvider } from "@mui/material";
 // import { createTheme } from "@mui/material/styles";
 // import { useMemo } from "react";
@@ -121,7 +118,6 @@ export default App;
 // import FarmerForm from "components/FarmerForm";
 // import Dashboard from "scenes/dashboard";
 
-
 // function App() {
 //     const { user } = useAuthContext();
 //   const mode = useSelector((state) => state.global.mode);
@@ -129,7 +125,7 @@ export default App;
 //   return (
 //     // <div className="app">
 //     <>
-      
+
 //       <BrowserRouter>
 //         <ThemeProvider theme={theme}>
 //           <CssBaseline />
@@ -150,7 +146,7 @@ export default App;
 //               element={
 //                   <Navigate to="/auth" />
 //               }
-//             /> 
+//             />
 //             <Route
 //               path="/auth"
 //               element={!user ? <AuthForm /> : <Navigate to="/dashboard" />}

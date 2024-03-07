@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import pay from "../hooks/usePay"
+import pay from "../hooks/usePay";
 import {
   Box,
   Divider,
@@ -136,7 +136,6 @@ const Sidebar = ({
       },
     });
 
-
     const response = await fetch("http://localhost:4000/order", {
       method: "POST",
       body: JSON.stringify({
@@ -155,7 +154,7 @@ const Sidebar = ({
       key: "rzp_test_hQAstdNzFYGx0d", // Enter the Key ID generated from the Dashboard
       amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency,
-      name: "Acme Corp", //your business name
+      name: "Kisan Seva", //your business name
       description: "Test Transaction",
       image: "https://example.com/your_logo",
       order_id: order.id, //This is a sample Order ID. Pass the id obtained in the response of Step 1
@@ -372,14 +371,6 @@ const Sidebar = ({
 
 export default Sidebar;
 
-
-
-
-
-
-
-
-
 // import React from "react";
 // import { useEffect, useState } from "react";
 // import { useLocation, useNavigate } from "react-router-dom";
@@ -476,9 +467,6 @@ export default Sidebar;
 //   },
 // ];
 
-
-
-
 // const Sidebar = ({
 //   user,
 //   drawerWidth,
@@ -494,7 +482,6 @@ export default Sidebar;
 //   useEffect(() => {
 //     setActive(pathname.substring(1));
 //   }, [pathname]);
-
 
 //  const paymentfunction = () =>{
 //     navigate('/payment')
