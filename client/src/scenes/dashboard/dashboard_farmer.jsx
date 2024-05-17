@@ -34,7 +34,8 @@ const Dashboard = () => {
   // const user = localStorage.getItem("user");
   // console.log(user);
 
-  const API_KEY = "AIzaSyCwHHCLAEInXJrGE1ZS1XsWhLz4L4yUMkw";
+  const API_KEY = process.env.REACT_APP_GEMINI_KEY;
+
   useEffect(() => {
     // Initialize Gemini and make prediction
     const runGemini = async () => {
@@ -496,77 +497,117 @@ const Dashboard = () => {
               rows={(data && data.transactions) || []}
               columns={columns}
             /> */}
-            <FlexBetween sx={{padding:'3%', color: theme.palette.secondary[100], fontSize:'1.5rem' }}>
+            <FlexBetween
+              sx={{
+                padding: "3%",
+                color: theme.palette.secondary[100],
+                fontSize: "1.5rem",
+              }}
+            >
               <Typography
                 variant="h6"
-                sx={{ color: theme.palette.secondary[100], fontSize:'1.5rem' }}
+                sx={{ color: theme.palette.secondary[100], fontSize: "1.5rem" }}
               >
-                Number of Loans  Applied: 
+                Number of Loans Applied:
               </Typography>
               5
             </FlexBetween>
-            
-            <FlexBetween sx={{padding:'3%', color: theme.palette.secondary[100], fontSize:'1.5rem' }}>
+
+            <FlexBetween
+              sx={{
+                padding: "3%",
+                color: theme.palette.secondary[100],
+                fontSize: "1.5rem",
+              }}
+            >
               <Typography
                 variant="h6"
-                sx={{ color: theme.palette.secondary[100], fontSize:'1.5rem' }}
+                sx={{ color: theme.palette.secondary[100], fontSize: "1.5rem" }}
               >
                 Total Loan Amount:
               </Typography>
               5,00,000
             </FlexBetween>
-            
-            <FlexBetween sx={{padding:'3%', color: theme.palette.secondary[100], fontSize:'1.5rem' }}>
+
+            <FlexBetween
+              sx={{
+                padding: "3%",
+                color: theme.palette.secondary[100],
+                fontSize: "1.5rem",
+              }}
+            >
               <Typography
                 variant="h6"
-                sx={{ color: theme.palette.secondary[100], fontSize:'1.5rem' }}
+                sx={{ color: theme.palette.secondary[100], fontSize: "1.5rem" }}
               >
                 Loan Repaid:
               </Typography>
               1,25,900
             </FlexBetween>
-            
-            <FlexBetween sx={{padding:'3%', color: theme.palette.secondary[100], fontSize:'1.5rem' }}>
+
+            <FlexBetween
+              sx={{
+                padding: "3%",
+                color: theme.palette.secondary[100],
+                fontSize: "1.5rem",
+              }}
+            >
               <Typography
                 variant="h6"
-                sx={{ color: theme.palette.secondary[100], fontSize:'1.5rem' }}
+                sx={{ color: theme.palette.secondary[100], fontSize: "1.5rem" }}
               >
                 Amount Left to be Repaid:
               </Typography>
               3,74,100
             </FlexBetween>
-            
-            
-            <FlexBetween sx={{padding:'3%', color: theme.palette.secondary[100], fontSize:'1.5rem' }}>
+
+            <FlexBetween
+              sx={{
+                padding: "3%",
+                color: theme.palette.secondary[100],
+                fontSize: "1.5rem",
+              }}
+            >
               <Typography
                 variant="h6"
-                sx={{ color: theme.palette.secondary[100], fontSize:'1.5rem' }}
+                sx={{ color: theme.palette.secondary[100], fontSize: "1.5rem" }}
               >
                 Rate of Interest:
               </Typography>
               8%
             </FlexBetween>
-            
-            <FlexBetween sx={{padding:'3%', color: theme.palette.secondary[100], fontSize:'1.5rem' }}>
+
+            <FlexBetween
+              sx={{
+                padding: "3%",
+                color: theme.palette.secondary[100],
+                fontSize: "1.5rem",
+              }}
+            >
               <Typography
                 variant="h6"
-                sx={{ color: theme.palette.secondary[100], fontSize:'1.5rem' }}
+                sx={{ color: theme.palette.secondary[100], fontSize: "1.5rem" }}
               >
                 Loan Repayment Date:
               </Typography>
               15-01-2024
             </FlexBetween>
-            
-            <FlexBetween sx={{padding:'3%', color: theme.palette.secondary[100], fontSize:'1.5rem' }}>
+
+            <FlexBetween
+              sx={{
+                padding: "3%",
+                color: theme.palette.secondary[100],
+                fontSize: "1.5rem",
+              }}
+            >
               <Typography
                 variant="h6"
-                sx={{ color: theme.palette.secondary[100], fontSize:'1.5rem' }}
+                sx={{ color: theme.palette.secondary[100], fontSize: "1.5rem" }}
               >
                 Next Repayment Date:
               </Typography>
               15-02-2024
             </FlexBetween>
-
           </Box>
           <Box
             gridColumn="span 5"

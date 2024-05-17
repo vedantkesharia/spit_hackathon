@@ -21,23 +21,24 @@ export const tokensDark = {
     200: "#ADBC9F",
     300: "#7c9366",
     400: "#4d775c",
-    500: "#436850",
-    600: "#12372A", // manually adjusted
+    // 500: "#313749",  alternate for boxes
+    500: "#2e3342",
+    600: "#1F2128", //  background dark
     700: "#339c2b",
     800: "#267420",
     900: "#11140e",
   },
   secondary: {
     // yellow
-    50: "#f0f0f0", // manually adjusted
-    100: "#fff6e0",
-    200: "#ffedc2",
-    300: "#ffe3a3",
+    50: "#90D673", //green
+    100: "#ffffff",
+    200: "#D1C7F4", //digits and sidebar icons
+    300: "#D1C7F4", //increase percentage, button bg, sidebar title and selection, icons lavender
     400: "#ffda85",
     500: "#ffd166",
-    600: "#cca752",
-    700: "#997d3d",
-    800: "#665429",
+    600: "#D1C7F4",
+    700: "#9A7CF8",
+    800: "#9A7CF8", // purple
     900: "#332a14",
   },
 };
